@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.AspNetCore.Cors;
 
 namespace MandatoryAssignment
 {
@@ -35,7 +36,7 @@ namespace MandatoryAssignment
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors(builder =>
-                builder.WithOrigins("http://127.0.0.1:80").AllowAnyHeader());
+                builder.AllowAnyOrigin());
             app.UseMvc();
         }
     }
